@@ -1,7 +1,7 @@
 package main
 
 import (
-	handler "final_project/api"
+	handler "final_project/api/handler"
 	"final_project/src/db"
 	"fmt"
 	"log"
