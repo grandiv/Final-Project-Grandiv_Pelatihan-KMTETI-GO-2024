@@ -1,7 +1,7 @@
 package main
 
 import (
-	"final_project/src/handler"
+	handler "final_project/api/"
 	"fmt"
 	"net/http"
 )

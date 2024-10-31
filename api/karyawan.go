@@ -5,51 +5,6 @@ import (
 	"net/http"
 )
 
-type StatusKerja string
-
-const (
-	StatusKontrak StatusKerja = "Kontrak"
-	StatusTetap StatusKerja = "Tetap"
-)
-
-type Karyawan struct {
-	Id    int    `json:"id"`
-	Nama string `json:"nama"`
-	NIK string `json:"nik"`
-	Pendidikan_Terakhir string `json:"pendidikan_terakhir"`
-	Tanggal_Masuk string `json:"tanggal_masuk"`
-	Status_Kerja StatusKerja `json:"status_kerja"`
-
-}
-
-var KaryawanList []*Karyawan = []*Karyawan{
-	{
-		Id:   1,
-		Nama: "Karyawan A",
-		NIK: "123456",
-		Pendidikan_Terakhir: "S1",
-		Tanggal_Masuk: "2021-01-01",
-		Status_Kerja: StatusKontrak,
-	},
-	{
-		Id:   2,
-		Nama: "Karyawan B",
-		NIK: "123457",
-		Pendidikan_Terakhir: "S2",
-		Tanggal_Masuk: "2021-01-02",
-		Status_Kerja: StatusTetap,
-	},
-}
-
-// KaryawanRequest is a struct to hold request data
-type KaryawanRequest struct {
-	Nama string `json:"nama"`
-	NIK string `json:"nik"`
-	Pendidikan_Terakhir string `json:"pendidikan_terakhir"`
-	Tanggal_Masuk string `json:"tanggal_masuk"`
-	Status_Kerja StatusKerja `json:"status_kerja"`
-}
-
 // KaryawanHandler is a handler to handle request to /api/buku
 func KaryawanHandler(w http.ResponseWriter, r *http.Request) {
 
